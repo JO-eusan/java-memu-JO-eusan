@@ -16,8 +16,21 @@ public class MenuResult {
 		setSelectedCategory(menuBoard);
 	}
 
+	public List<String> getFiveDays() {
+		return fiveDays;
+	}
+
 	public List<Category> getSelectedCategory() {
 		return selectedCategory;
+	}
+
+	public List<String> getSelectedCategoryNames() {
+		List<String> categoryNames = new ArrayList<>();
+		for(Category category : selectedCategory) {
+			categoryNames.add(category.toString());
+		}
+
+		return categoryNames;
 	}
 
 	private void setSelectedCategory(MenuBoard menuBoard) {

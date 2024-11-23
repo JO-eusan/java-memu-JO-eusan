@@ -15,4 +15,9 @@ public class Asian extends Category {
 			menus.add(menu.trim());
 		}
 	}
+
+	@Override
+	public String toString() {
+		return "아시안";
+	}
 }

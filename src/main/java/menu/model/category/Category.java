@@ -15,4 +15,9 @@ public abstract class Category {
 	}
 
 	protected abstract void setMenus();
+
+	@Override
+	public String toString() {
+		return super.toString();
+	}
 }

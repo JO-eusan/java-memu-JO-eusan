@@ -16,4 +16,9 @@ public class Japanese extends Category {
 		}
 	}
 
+	@Override
+	public String toString() {
+		return "일식";
+	}
+
 }

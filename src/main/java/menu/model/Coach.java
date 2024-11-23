@@ -23,6 +23,10 @@ public class Coach {
 		return name;
 	}
 
+	public List<String> getEatingMenu() {
+		return eatingMenu;
+	}
+
 	public void setEatingMenu(Category category, MenuBoard menuBoard) {
 		String pick = menuBoard.pickMenu(category);
 		while(!eatingMenu.contains(pick)) {

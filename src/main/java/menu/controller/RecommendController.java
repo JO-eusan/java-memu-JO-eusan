@@ -27,7 +27,7 @@ public class RecommendController {
 		setCoachManager();
 		setCoachNotLikeMenu();
 		recommendMenu();
-
+		printResult();
 		outputView.printEndMessage();
 	}
 
@@ -69,4 +69,9 @@ public class RecommendController {
 		}
 	}
 
+	private void printResult() {
+		outputView.printResultMessage();
+		outputView.printCategory(menuResult);
+		outputView.printCoaches(coachManager);
+	}
 }

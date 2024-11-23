@@ -33,9 +33,9 @@ public class MenuBoard {
 	}
 
 	public Category pickCategory() {
-		Category pick = board.get(Randoms.pickNumberInRange(1,5));
+		Category pick = board.get(Randoms.pickNumberInRange(1,5) - 1);
 		while (categoryCounter.get(pick) < 2) {
-			pick = board.get(Randoms.pickNumberInRange(1,5));
+			pick = board.get(Randoms.pickNumberInRange(1,5) - 1);
 		}
 
 		return pick;
