@@ -11,19 +11,27 @@ public class Coach {
 
 	private String name;
 	private List<String> eatingMenu;
-	private List<String> notMenu;
+	private List<String> unlikeMenu;
 
 	public Coach(String name) {
 		this.name = name;
 		eatingMenu = new ArrayList<>();
-		notMenu = new ArrayList<>();
+		unlikeMenu = new ArrayList<>();
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public void setNotMenu(String input, MenuBoard menuBoard) {
+	public void setEatingMenu(Category category, MenuBoard menuBoard) {
+		String pick = menuBoard.pickMenu(category);
+		while(!eatingMenu.contains(pick)) {
+			pick = menuBoard.pickMenu(category);
+		}
+		eatingMenu.add(pick);
+	}
+
+	public void setUnlikeMenu(String input, MenuBoard menuBoard) {
 		String[] menus = input.split(",");
 		validateNotLikeMenuSize(menus);
 
@@ -34,7 +42,7 @@ public class Coach {
 		}
 
 		for(String menu : menus) {
-			notMenu.add(menu);
+			unlikeMenu.add(menu);
 		}
 	}
 
