@@ -44,29 +44,30 @@ public class SystemController {
 
 	private void setCoachNotLikeMenu() {
 		for(Coach coach : coachManager.getCoaches()) {
-			inputIncludeMenu(coach.getName(), coach);
+			inputIncludeMenu(coach);
 			System.out.println();
 		}
 	}
 
-	private void inputIncludeMenu(String name, Coach coach) {
+	private void inputIncludeMenu(Coach coach) {
 		try {
-			String input = inputView.inputNotEatMenus(name);
+			String input = inputView.inputNotEatMenus(coach.getName());
 			coach.setUnlikeMenu(input, menuBoard);
 		} catch (IllegalArgumentException e) {
 			outputView.printErrorMessage(e);
-			inputIncludeMenu(name, coach);
+			inputIncludeMenu(coach);
 		}
 	}
 
 	private void recommendMenu() {
-		for(Coach coach : coachManager.getCoaches()) {
-			selectMenus(coach);
+		for(int i=0; i<5; i++) {
+			Category category = menuResult.getSelectedCategory().get(i);
+			selectMenus(category);
 		}
 	}
 
-	private void selectMenus(Coach coach) {
-		for(Category category : menuResult.getSelectedCategory()) {
+	private void selectMenus(Category category) {
+		for(Coach coach : coachManager.getCoaches()) {
 			coach.setEatingMenu(category, menuBoard);
 		}
 	}

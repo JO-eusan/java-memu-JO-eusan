@@ -42,7 +42,7 @@ public class MenuBoard {
 	}
 
 	public String pickMenu(Category category) {
-		List<String> menus = category.getMenus();
+		List<String> menus = new ArrayList<>(category.getMenus());
 		return Randoms.shuffle(menus).get(0);
 	}
 
