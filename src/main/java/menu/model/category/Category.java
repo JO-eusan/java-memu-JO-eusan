@@ -10,5 +10,9 @@ public abstract class Category {
 		menus = new ArrayList<>();
 	}
 
+	public List<String> getMenus() {
+		return menus;
+	}
+
 	protected abstract void setMenus();
 }
