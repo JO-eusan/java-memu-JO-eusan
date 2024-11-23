@@ -29,7 +29,7 @@ public class Coach {
 
 	public void setEatingMenu(Category category, MenuBoard menuBoard) {
 		String pick = menuBoard.pickMenu(category);
-		while(!eatingMenu.contains(pick)) {
+		while(eatingMenu.contains(pick)) {
 			pick = menuBoard.pickMenu(category);
 		}
 		eatingMenu.add(pick);

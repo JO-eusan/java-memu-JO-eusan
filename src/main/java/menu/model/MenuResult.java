@@ -11,8 +11,8 @@ public class MenuResult {
 	private List<Category> selectedCategory;
 
 	public MenuResult(MenuBoard menuBoard) {
-		fiveDays = new ArrayList<>(Arrays.asList("월요일", "화요일", "수요일", "목요일", "금요일"));
-		selectedCategory = new ArrayList<>();
+		this.fiveDays = new ArrayList<>(Arrays.asList("월요일", "화요일", "수요일", "목요일", "금요일"));
+		this.selectedCategory = new ArrayList<>();
 		setSelectedCategory(menuBoard);
 	}
 

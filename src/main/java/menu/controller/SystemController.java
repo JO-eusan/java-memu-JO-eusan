@@ -8,21 +8,21 @@ import menu.model.category.Category;
 import menu.view.InputView;
 import menu.view.OutputView;
 
-public class RecommendController {
-	InputView inputView;
-	OutputView outputView;
-	MenuBoard menuBoard;
-	MenuResult menuResult;
-	CoachManager coachManager;
+public class SystemController {
+	private InputView inputView;
+	private OutputView outputView;
+	private MenuBoard menuBoard;
+	private MenuResult menuResult;
+	private CoachManager coachManager;
 
-	public RecommendController() {
+	public SystemController() {
 		this.inputView = new InputView();
 		this.outputView = new OutputView();
 		this.menuBoard = new MenuBoard();
 		this.menuResult = new MenuResult(menuBoard);
 	}
 
-	public void startRecommend() {
+	public void start() {
 		outputView.printStartMessage();
 		setCoachManager();
 		setCoachNotLikeMenu();
@@ -39,11 +39,13 @@ public class RecommendController {
 			outputView.printErrorMessage(e);
 			setCoachManager();
 		}
+		System.out.println();
 	}
 
 	private void setCoachNotLikeMenu() {
 		for(Coach coach : coachManager.getCoaches()) {
 			inputIncludeMenu(coach.getName(), coach);
+			System.out.println();
 		}
 	}
 

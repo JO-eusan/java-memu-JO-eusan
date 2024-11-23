@@ -32,13 +32,13 @@ public class OutputView {
 	}
 
 	public void printCategory(MenuResult menuResult) {
-		System.out.printf(DAY_OUTPUT_FORMAT, String.join("|", menuResult.getFiveDays()));
-		System.out.printf(CATEGORY_OUTPUT_FORMAT, String.join("|", menuResult.getSelectedCategoryNames()));
+		System.out.printf(DAY_OUTPUT_FORMAT, String.join(" | ", menuResult.getFiveDays()));
+		System.out.printf(CATEGORY_OUTPUT_FORMAT, String.join(" | ", menuResult.getSelectedCategoryNames()));
 	}
 
 	public void printCoaches(CoachManager coachManager) {
 		for(Coach coach : coachManager.getCoaches()) {
-			System.out.printf(COACH_OUTPUT_FORMAT, coach.getName(), String.join("|", coach.getEatingMenu()));
+			System.out.printf(COACH_OUTPUT_FORMAT, coach.getName(), String.join(" | ", coach.getEatingMenu()));
 		}
 	}
 }
